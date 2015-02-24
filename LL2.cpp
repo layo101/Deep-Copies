@@ -34,16 +34,24 @@ LL2::LL2(const LL2& lst){
 	}
       	else
 	{
+		// copy first node
 		head = new Node;
 		head -> data = lst.head -> data;
 		
+		// copy remaining nodes
 		current = head;
 		nex = lst.head -> next;
 	}
 
+	//store new node in link of 
+	//last node added to new list 
+	//current points to new node
+	//copy data to new node
+	//nex points to next node of original list
+	//and set last pointer
 	while(nex)
 	{
-		current -> next = new Node;
+		current -> next = new Node;				
 		current = current -> next;
 		current -> data = nex -> data;
 
